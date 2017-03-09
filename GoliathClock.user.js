@@ -19,3 +19,18 @@ minutes = minutes < 10 ? '0'+minutes : minutes;
 $('.clock').remove();
 $("<span class='clock' style='text-align: right; display: inline-block; padding-left: 15px'>"+hours + ':' + minutes + ' ' + ampm+"</span>").insertAfter(".text:first");
 }, 1000);
+
+var version = 0.1;
+var request = new XMLHttpRequest();
+request.onreadystatechange = function() {
+    if (request.readyState == XMLHttpRequest.DONE) {
+        var updatedScriptVersion = request.responseText;
+        if(version < updatedScriptVersion)
+        {
+            console.log("Update script");
+            window.location.href = "https://github.com/Rikeardo/Goliath-Clock/raw/master/GoliathClock.user.js";
+        }
+    }
+};
+request.open('GET', 'https://raw.githubusercontent.com/Rikeardo/Goliath-Clock/master/ClockVersion.json', true);
+request.send(null);
