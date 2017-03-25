@@ -9,7 +9,7 @@
 setInterval(function()
 {
 var clientDate = new Date();
-var serverDate = new Date(clientDate.getTime() + (clientDate.getTimezoneOffset() * 60000) + (3600000*-5));
+var serverDate = new Date(clientDate.getTime() + (clientDate.getTimezoneOffset() * 60000) + (3600000*-4));
 var hours = serverDate.getHours();
 var minutes = serverDate.getMinutes();
 var ampm = hours >= 12 ? 'pm' : 'am';
