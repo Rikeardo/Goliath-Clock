@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name         Goliath Clock
-// @version      0.1
+// @version      0.1.1
 // @description  Adds a server-based clock on goliath pages
 // @author       _Rikardo_
 // @match        https://goliath.hypixel.net/*
@@ -20,7 +20,7 @@ $('.clock').remove();
 $("<span class='clock' style='text-align: right; display: inline-block; padding-left: 15px'>"+hours + ':' + minutes + ' ' + ampm+"</span>").insertAfter(".text:first");
 }, 1000);
 
-var version = 0.1;
+var version = 0.11;
 var request = new XMLHttpRequest();
 request.onreadystatechange = function() {
     if (request.readyState == XMLHttpRequest.DONE) {
